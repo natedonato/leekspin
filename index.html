@@ -43,16 +43,13 @@
             time.innerText = "00:" + output + ".";
         }
 
-        setInterval(tick, 1000);
-
         window.addEventListener('click', function handler (event){
             document.getElementById("instructions").style.display = "none";
             document.getElementById("instructions2").style.display = "none";
             document.getElementById("content").style.display = "flex";
             document.getElementById("polkka").play()
+            setInterval(tick, 1000);
         });
-        
-
 
     </script>
 </body>
