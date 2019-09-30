@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LeekSpin</title>
+    
+</head>
+
+<body id="body" style="display: flex; background: black; flex-direction: column; align-items: center; justify-content: center;">
+    <h1 id="instructions" style="color: white">Click ANYWHERE</h1>
+
+    <img src="./leek.gif" alt="" style="height: calc(100vh - 40px); width: auto;">
+    <audio id="polkka" src="./polkka.ogg" loop></audio>
+    <div style="text-align:center; color:white; font-size:14pt; font-weight:bold" id="timer" >You've been spinning for <span id="time">00:00:00.</span></div>
+    <script>
+        var time = document.getElementById("time");
+        console.log(time);
+        var sec = 0;
+        var min = 0;
+        var hour = 0;
+        function tick () {
+            
+            sec += 1;
+            if(sec > 59){
+                sec = sec % 60;
+                min += 1;
+            }
+            let output = "0" + String(min) + ":";
+
+            if(sec < 10){
+                output += "0" + sec;
+            }else{
+                output += sec;
+            }
+
+            time.innerText = "00:" + output + ".";
+        }
+
+        setInterval(tick, 1000);
+
+        window.addEventListener('click', (event) => {
+            document.getElementById("instructions").style.display = "none";
+            document.getElementById("body").style.display = "flex";
+            document.getElementById("polkka").play()
+        });
+        
+
+
+    </script>
+</body>
+</html>
