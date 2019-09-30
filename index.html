@@ -60,6 +60,7 @@
             document.getElementById("content").style.display = "flex";
             document.getElementById("polkka").play()
             setInterval(tick, 1000);
+            window.removeEventListener('click', handler);
         });
 
     </script>
