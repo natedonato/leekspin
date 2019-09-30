@@ -10,6 +10,7 @@
 
 <body id="body" style="display: flex; background: black; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0px 0px ">
     <h1 id="instructions" style="color: white">click anywhere</h1>
+    <h3 id="instructions2" style="color: white">(turn up sound)</h3>
 
     <div id="content" style="display: none; background: black; flex-direction: column; align-items: center; justify-content: center;">
 
@@ -46,6 +47,7 @@
 
         window.addEventListener('click', (event) => {
             document.getElementById("instructions").style.display = "none";
+            document.getElementById("instructions2").style.display = "none";
             document.getElementById("content").style.display = "flex";
             document.getElementById("polkka").play()
         });
